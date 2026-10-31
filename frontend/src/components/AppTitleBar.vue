@@ -88,7 +88,6 @@ onBeforeUnmount(() => {
 .brand-mark {
   width: 24px;
   height: 24px;
-  filter: drop-shadow(0 5px 12px rgba(50, 146, 255, 0.22));
 }
 
 .brand-copy {
@@ -98,7 +97,7 @@ onBeforeUnmount(() => {
 }
 
 .brand-name {
-  color: rgba(245, 248, 253, 0.9);
+  color: var(--text-1);
   font-family: var(--font-display);
   font-size: 12.5px;
   font-weight: 650;
@@ -144,12 +143,12 @@ onBeforeUnmount(() => {
 
 .window-control:hover {
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.075);
+  background: var(--surface-3);
 }
 
 .window-control--close:hover {
-  color: #fff;
-  background: #c42b3a;
+  color: #ffffff;
+  background: var(--danger);
 }
 
 .restore-icon {

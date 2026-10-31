@@ -36,6 +36,17 @@ for (const [name, path] of routes) {
   console.log(`${current ? 'FAIL' : 'OK  '} ${name.padEnd(4)} ${path}`)
 }
 
+const floatingBefore = issues.length
+await page.goto(`${baseUrl}/floating.html`, { waitUntil: 'networkidle' })
+await page.waitForTimeout(900)
+const floatingWidgetCount = await page.locator('.floating-widget').count()
+if (floatingWidgetCount < 1) {
+  issues.push('[floating] no floating widgets rendered')
+}
+console.log(
+  `${issues.length > floatingBefore ? 'FAIL' : 'OK  '} 浮窗 ${floatingWidgetCount} 个板块`,
+)
+
 await browser.close()
 
 if (issues.length) {

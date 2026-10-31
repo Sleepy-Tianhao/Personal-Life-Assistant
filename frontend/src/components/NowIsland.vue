@@ -168,19 +168,14 @@ watch(
   max-width: min(560px, 44vw);
   padding: 0 14px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--stroke);
   border-radius: 999px;
   color: var(--text-2);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
-    rgba(4, 7, 11, 0.78);
-  box-shadow:
-    0 7px 22px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  background: var(--surface-1);
+  box-shadow: var(--shadow-sm);
   font-size: 11.5px;
   white-space: nowrap;
   cursor: pointer;
-  backdrop-filter: blur(20px) saturate(1.25);
   transition:
     border-color 180ms var(--ease-out),
     background 180ms var(--ease-out),
@@ -188,10 +183,8 @@ watch(
 }
 
 .now-island:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent),
-    rgba(5, 9, 14, 0.86);
+  border-color: var(--stroke-strong);
+  background: var(--surface-2);
 }
 
 .now-island:active {
@@ -199,11 +192,9 @@ watch(
 }
 
 .now-island--live {
-  border-color: color-mix(in srgb, var(--accent) 32%, transparent);
-  box-shadow:
-    0 7px 24px rgba(0, 0, 0, 0.3),
-    0 0 30px color-mix(in srgb, var(--accent) 9%, transparent),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: var(--stroke-accent);
+  background: var(--accent-faint);
+  box-shadow: var(--shadow-sm);
 }
 
 .island-date {
@@ -221,7 +212,7 @@ watch(
 .island-divider {
   width: 1px;
   height: 12px;
-  background: rgba(255, 255, 255, 0.11);
+  background: var(--stroke-strong);
 }
 
 .island-course {
@@ -229,7 +220,7 @@ watch(
   min-width: 0;
   align-items: center;
   gap: 6px;
-  color: var(--accent);
+  color: var(--accent-deep);
   font-weight: 580;
 }
 
@@ -249,8 +240,7 @@ watch(
   left: 0;
   height: 2px;
   border-radius: 0 3px 3px 0;
-  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
-  box-shadow: 0 0 10px var(--accent-glow);
+  background: var(--accent);
   transition: width 1s linear;
 }
 

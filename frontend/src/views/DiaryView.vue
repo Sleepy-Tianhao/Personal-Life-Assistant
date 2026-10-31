@@ -500,14 +500,12 @@ onBeforeUnmount(() => {
 }
 
 .entry-item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-2);
 }
 
 .entry-item--active {
-  border-color: color-mix(in srgb, var(--accent) 18%, transparent);
-  background:
-    linear-gradient(90deg, var(--accent-soft), transparent 90%),
-    rgba(255, 255, 255, 0.025);
+  border-color: var(--stroke-accent);
+  background: var(--accent-soft);
 }
 
 .entry-date {
@@ -521,7 +519,7 @@ onBeforeUnmount(() => {
   gap: 0;
   border: 1px solid var(--stroke);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-2);
 }
 
 .entry-date strong {
@@ -603,7 +601,6 @@ onBeforeUnmount(() => {
 
 .entry-item--active .entry-indicator {
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 .diary-editor {
@@ -621,7 +618,7 @@ onBeforeUnmount(() => {
   gap: 16px;
   padding: 13px 20px;
   border-bottom: 1px solid var(--stroke);
-  background: rgba(255, 255, 255, 0.012);
+  background: var(--surface-2);
 }
 
 .editor-date {
@@ -644,7 +641,6 @@ onBeforeUnmount(() => {
 
 .editor-date-input::-webkit-calendar-picker-indicator {
   opacity: 0.42;
-  filter: invert(1);
 }
 
 .unsaved-dot {
@@ -653,7 +649,6 @@ onBeforeUnmount(() => {
   margin-left: 2px;
   border-radius: 50%;
   background: var(--warning);
-  box-shadow: 0 0 7px rgba(244, 201, 106, 0.4);
 }
 
 .unsaved-label {
@@ -702,7 +697,8 @@ onBeforeUnmount(() => {
 }
 
 .editor-title::placeholder {
-  color: rgba(255, 255, 255, 0.18);
+  color: var(--text-3);
+  opacity: 0.55;
 }
 
 .mood-row {
@@ -742,17 +738,17 @@ onBeforeUnmount(() => {
 .weather-chip:hover {
   border-color: var(--stroke-strong);
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-2);
 }
 
 .mood-chip.active {
   border-color: var(--stroke-accent);
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
 .weather-chip.active {
-  border-color: rgba(244, 201, 106, 0.25);
+  border-color: color-mix(in srgb, var(--warning) 22%, white);
   color: var(--warning);
   background: var(--warning-soft);
 }
@@ -770,7 +766,7 @@ onBeforeUnmount(() => {
   padding: 0;
   border: 0;
   outline: none;
-  color: #dce4f1;
+  color: var(--text-1);
   background: transparent;
   font-family: var(--font-sans);
   font-size: 14px;
@@ -779,7 +775,8 @@ onBeforeUnmount(() => {
 }
 
 .editor-content::placeholder {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--text-3);
+  opacity: 0.55;
 }
 
 .editor-footer {
@@ -817,9 +814,9 @@ onBeforeUnmount(() => {
   position: absolute;
   width: 440px;
   height: 440px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid #e3eee6;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-faint), transparent 65%);
+  background: #f7fbf8;
   pointer-events: none;
 }
 
@@ -831,7 +828,7 @@ onBeforeUnmount(() => {
   place-items: center;
   border: 1px solid var(--stroke-accent);
   border-radius: 22px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 

@@ -833,21 +833,20 @@ onBeforeUnmount(() => {
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(4px);
 }
 
 .orb--one {
   width: 260px;
   height: 260px;
-  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
-  background: radial-gradient(circle at 38% 34%, var(--accent-soft), transparent 64%);
-  box-shadow: inset 0 0 60px color-mix(in srgb, var(--accent) 7%, transparent);
+  border: 1px solid #d5e9dc;
+  background: #eaf5ee;
 }
 
 .orb--two {
   width: 176px;
   height: 176px;
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid #f0ddcf;
+  background: #fbf2eb;
 }
 
 .empty-icon {
@@ -858,11 +857,8 @@ onBeforeUnmount(() => {
   place-items: center;
   border: 1px solid var(--stroke-accent);
   border-radius: 28px;
-  color: var(--accent);
-  background: linear-gradient(145deg, var(--accent-soft), rgba(255, 255, 255, 0.025));
-  box-shadow:
-    0 24px 70px color-mix(in srgb, var(--accent) 13%, transparent),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: var(--accent-deep);
+  background: var(--accent-soft);
 }
 
 .empty-timetable__copy {
@@ -996,7 +992,7 @@ onBeforeUnmount(() => {
   gap: 1px;
   padding: 11px 13px;
   border-right: 1px solid var(--stroke);
-  background: rgba(255, 255, 255, 0.012);
+  background: var(--surface-2);
 }
 
 .tt-day-name {
@@ -1021,14 +1017,12 @@ onBeforeUnmount(() => {
 }
 
 .tt-day-head--today {
-  background:
-    linear-gradient(180deg, var(--accent-soft), transparent 80%),
-    rgba(255, 255, 255, 0.015);
+  background: var(--accent-faint);
 }
 
 .tt-day-head--today .tt-day-name,
 .tt-day-head--today strong {
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .tt-body {
@@ -1060,14 +1054,14 @@ onBeforeUnmount(() => {
 }
 
 .tt-day-column--today {
-  background: color-mix(in srgb, var(--accent) 2.6%, transparent);
+  background: var(--accent-faint);
 }
 
 .tt-hour-line {
   position: absolute;
   right: 0;
   left: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.052);
+  border-top: 1px solid var(--stroke);
 }
 
 .tt-now-line {
@@ -1077,7 +1071,6 @@ onBeforeUnmount(() => {
   z-index: 4;
   height: 1px;
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .tt-now-line i {
@@ -1105,28 +1098,19 @@ onBeforeUnmount(() => {
   border-left: 2px solid var(--tone);
   border-radius: 8px;
   color: var(--text-1);
-  background:
-    linear-gradient(135deg, var(--tone-bg-strong), var(--tone-bg)),
-    rgba(10, 16, 24, 0.94);
+  background: var(--tone-bg);
   text-align: left;
-  cursor: default;
-  transition:
-    filter 160ms var(--ease-out),
-    transform 160ms var(--ease-out),
-    box-shadow 160ms var(--ease-out);
+  cursor: pointer;
+  transition: background 160ms var(--ease-out);
 }
 
 .tt-course:hover {
   z-index: 5;
-  filter: brightness(1.12);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  background: var(--tone-bg-strong);
 }
 
 .tt-course--now {
-  box-shadow:
-    0 0 0 1px var(--tone),
-    0 0 24px var(--tone-glow);
+  box-shadow: 0 0 0 2px var(--tone);
 }
 
 .tt-course__top {
@@ -1190,15 +1174,7 @@ onBeforeUnmount(() => {
 }
 
 .course-glow {
-  position: absolute;
-  top: -18px;
-  right: -18px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: var(--tone-glow);
-  filter: blur(24px);
-  pointer-events: none;
+  display: none;
 }
 
 .tt-loading {
@@ -1208,8 +1184,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(7, 11, 17, 0.52);
-  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .week-empty {
@@ -1244,7 +1219,7 @@ onBeforeUnmount(() => {
   flex: none;
   place-items: center;
   border-radius: 10px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
@@ -1267,7 +1242,7 @@ onBeforeUnmount(() => {
   gap: 16px;
   margin-bottom: 14px;
   padding: 13px 15px;
-  border: 1px solid rgba(244, 201, 106, 0.18);
+  border: 1px solid color-mix(in srgb, var(--warning) 20%, white);
   border-radius: 13px;
   color: var(--warning);
   background: var(--warning-soft);
@@ -1300,9 +1275,7 @@ onBeforeUnmount(() => {
   border: 1px dashed var(--stroke-strong);
   border-radius: 15px;
   color: var(--text-2);
-  background:
-    radial-gradient(320px 130px at 50% 0%, var(--accent-faint), transparent 70%),
-    rgba(5, 9, 14, 0.32);
+  background: var(--accent-faint);
   text-align: center;
   cursor: pointer;
   transition:
@@ -1312,10 +1285,8 @@ onBeforeUnmount(() => {
 
 .drop-zone:hover,
 .drop-zone--active {
-  border-color: var(--accent);
-  background:
-    radial-gradient(320px 160px at 50% 0%, var(--accent-soft), transparent 70%),
-    rgba(5, 9, 14, 0.4);
+  border-color: var(--accent-deep);
+  background: var(--accent-soft);
 }
 
 .drop-zone--selected {
@@ -1330,7 +1301,7 @@ onBeforeUnmount(() => {
   margin-bottom: 3px;
   place-items: center;
   border-radius: 13px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
@@ -1378,9 +1349,7 @@ onBeforeUnmount(() => {
   padding: 18px;
   border: 1px solid var(--tone-border);
   border-radius: 14px;
-  background:
-    radial-gradient(260px 120px at 100% 0%, var(--tone-glow), transparent 70%),
-    var(--tone-bg);
+  background: var(--tone-bg);
 }
 
 .course-detail__code {
@@ -1437,7 +1406,7 @@ onBeforeUnmount(() => {
   place-items: center;
   border-radius: 9px;
   color: var(--text-2);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-2);
 }
 
 .course-detail__row > div {

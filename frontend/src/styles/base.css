@@ -21,10 +21,7 @@ body {
   min-width: 320px;
   overflow: hidden;
   color: var(--text-1);
-  background:
-    radial-gradient(1100px 680px at 76% -18%, rgba(37, 103, 255, 0.28), transparent 62%),
-    radial-gradient(820px 620px at -8% 106%, rgba(22, 85, 151, 0.2), transparent 64%),
-    linear-gradient(145deg, #070b11 0%, #080d15 42%, #06090e 100%);
+  background: var(--bg-0);
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.5;
@@ -75,8 +72,8 @@ button:disabled {
 }
 
 ::selection {
-  color: #06111b;
-  background: var(--accent);
+  color: #ffffff;
+  background: var(--accent-strong);
 }
 
 :focus-visible {
@@ -96,12 +93,12 @@ button:disabled {
 ::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(32, 52, 42, 0.16);
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(32, 52, 42, 0.26);
   background-clip: padding-box;
 }
 
@@ -167,7 +164,7 @@ a {
 }
 
 .eyebrow {
-  color: var(--accent);
+  color: var(--accent-deep);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -204,9 +201,7 @@ a {
 .card {
   border: 1px solid var(--stroke);
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.035), transparent 50%),
-    var(--surface-1);
+  background: var(--surface-1);
   box-shadow: var(--shadow-sm);
 }
 
@@ -216,7 +211,8 @@ a {
 
 .card--accent {
   border-color: var(--stroke-accent);
-  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: var(--accent-faint);
+  box-shadow: var(--shadow-sm);
 }
 
 .card-pad {
@@ -252,7 +248,7 @@ a {
   border: 1px solid var(--stroke-strong);
   border-radius: var(--radius-sm);
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.055);
+  background: var(--surface-1);
   font-size: 13px;
   font-weight: 580;
   white-space: nowrap;
@@ -260,13 +256,12 @@ a {
   transition:
     transform 160ms var(--ease-out),
     background 160ms var(--ease-out),
-    border-color 160ms var(--ease-out),
-    box-shadow 160ms var(--ease-out);
+    border-color 160ms var(--ease-out);
 }
 
 .btn:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--stroke-strong);
+  background: var(--surface-3);
 }
 
 .btn:active {
@@ -274,17 +269,17 @@ a {
 }
 
 .btn-primary {
-  border-color: color-mix(in srgb, var(--accent) 62%, transparent);
-  color: #04111d;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  box-shadow: 0 9px 24px color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: var(--accent-strong);
+  color: #ffffff;
+  background: var(--accent-strong);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
-  border-color: var(--accent);
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 26%, transparent);
-  filter: brightness(1.05);
+  border-color: var(--accent-deep);
+  background: var(--accent-deep);
+  box-shadow: none;
+  filter: none;
 }
 
 .btn-ghost {
@@ -296,18 +291,18 @@ a {
 .btn-ghost:hover {
   border-color: transparent;
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--surface-3);
 }
 
 .btn-danger {
-  border-color: rgba(255, 112, 137, 0.25);
-  color: #ffd7de;
+  border-color: color-mix(in srgb, var(--danger) 18%, white);
+  color: var(--danger);
   background: var(--danger-soft);
 }
 
 .btn-danger:hover {
-  border-color: rgba(255, 112, 137, 0.45);
-  background: rgba(255, 112, 137, 0.18);
+  border-color: color-mix(in srgb, var(--danger) 30%, white);
+  background: var(--danger-soft);
 }
 
 .btn-sm {
@@ -345,12 +340,12 @@ a {
 .icon-btn:hover {
   color: var(--text-1);
   border-color: var(--stroke);
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--surface-3);
 }
 
 .icon-btn--danger:hover {
   color: var(--danger);
-  border-color: rgba(255, 112, 137, 0.16);
+  border-color: color-mix(in srgb, var(--danger) 16%, white);
   background: var(--danger-soft);
 }
 
@@ -380,7 +375,7 @@ a {
   border: 1px solid var(--stroke-strong);
   border-radius: var(--radius-sm);
   color: var(--text-1);
-  background: rgba(5, 9, 14, 0.46);
+  background: var(--surface-1);
   font-size: 13px;
   transition:
     border-color 160ms var(--ease-out),
@@ -409,15 +404,15 @@ a {
 .input:hover,
 .textarea:hover,
 .select:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--text-3);
 }
 
 .input:focus,
 .textarea:focus,
 .select:focus {
   outline: none;
-  border-color: var(--accent);
-  background: rgba(5, 9, 14, 0.62);
+  border-color: var(--accent-deep);
+  background: var(--surface-1);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
@@ -442,13 +437,12 @@ a {
 input[type="datetime-local"],
 input[type="date"],
 input[type="time"] {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0.55;
-  filter: invert(1);
 }
 
 .search-box {
@@ -477,7 +471,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid var(--stroke);
   border-radius: var(--radius-pill);
   color: var(--text-2);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-2);
   font-size: 11.5px;
   font-weight: 550;
   white-space: nowrap;
@@ -485,24 +479,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .chip--accent {
   border-color: var(--stroke-accent);
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
 .chip--success {
-  border-color: rgba(94, 226, 166, 0.18);
+  border-color: color-mix(in srgb, var(--success) 18%, white);
   color: var(--success);
   background: var(--success-soft);
 }
 
 .chip--danger {
-  border-color: rgba(255, 112, 137, 0.18);
+  border-color: color-mix(in srgb, var(--danger) 18%, white);
   color: var(--danger);
   background: var(--danger-soft);
 }
 
 .chip--warning {
-  border-color: rgba(244, 201, 106, 0.18);
+  border-color: color-mix(in srgb, var(--warning) 20%, white);
   color: var(--warning);
   background: var(--warning-soft);
 }
@@ -521,7 +515,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 3px;
   border: 1px solid var(--stroke);
   border-radius: 11px;
-  background: rgba(4, 8, 13, 0.36);
+  background: var(--surface-2);
 }
 
 .segmented button {
@@ -542,9 +536,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .segmented button.active {
-  color: var(--text-1);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: var(--accent-deep);
+  background: var(--surface-1);
+  box-shadow: var(--shadow-sm);
 }
 
 .switch {
@@ -570,7 +564,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 21px;
   border: 1px solid var(--stroke-strong);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #e5ece6;
   transition: 180ms var(--ease-out);
 }
 
@@ -581,19 +575,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #cbd5e5;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(32, 52, 42, 0.16);
   content: "";
   transition: 180ms var(--ease-out);
 }
 
 .switch input:checked + .switch__track {
-  border-color: var(--accent);
+  border-color: var(--accent-deep);
   background: var(--accent);
 }
 
 .switch input:checked + .switch__track::after {
   left: 19px;
-  background: #05111b;
+  background: #ffffff;
 }
 
 .money {
@@ -630,7 +625,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid var(--stroke);
   border-radius: 15px;
   color: var(--text-2);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-3);
 }
 
 .empty-state strong {
@@ -658,8 +653,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .spinner {
   width: 17px;
   height: 17px;
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-top-color: var(--accent);
+  border: 2px solid var(--stroke);
+  border-top-color: var(--accent-deep);
   border-radius: 50%;
   animation: spin 0.75s linear infinite;
 }
@@ -667,16 +662,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .skeleton {
   overflow: hidden;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.055);
-}
-
-.skeleton::after {
-  display: block;
-  width: 45%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
-  content: "";
-  animation: skeleton 1.3s infinite;
+  background: #edf4ee;
+  animation: pulse-soft 1.3s ease-in-out infinite;
 }
 
 .meta-row {
@@ -735,7 +722,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .link {
-  color: var(--accent);
+  color: var(--accent-deep);
   font-size: 12px;
   font-weight: 580;
 }

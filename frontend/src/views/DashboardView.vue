@@ -440,28 +440,17 @@ onMounted(loadDashboard)
   align-items: stretch;
   justify-content: space-between;
   overflow: hidden;
-  border-color: color-mix(in srgb, var(--accent) 16%, var(--stroke));
-  background:
-    radial-gradient(800px 440px at 14% -20%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 58%),
-    radial-gradient(640px 360px at 92% 120%, rgba(68, 77, 255, 0.18), transparent 60%),
-    linear-gradient(135deg, rgba(34, 52, 84, 0.72), rgba(15, 21, 31, 0.88));
-  box-shadow:
-    var(--shadow-md),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: #d7e9de;
+  background: #e9f4ed;
+  box-shadow: none;
 }
 
 .hero-noise {
-  position: absolute;
-  inset: 0;
-  opacity: 0.19;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-  pointer-events: none;
+  display: none;
 }
 
 .hero-orbit {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -471,7 +460,7 @@ onMounted(loadDashboard)
   right: -52px;
   width: 470px;
   height: 470px;
-  background: radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 68%);
+  background: #deeee4;
 }
 
 .hero-orbit--two {
@@ -479,7 +468,7 @@ onMounted(loadDashboard)
   right: 36px;
   width: 290px;
   height: 290px;
-  border-color: rgba(255, 255, 255, 0.055);
+  border: 1px solid #d0e5d8;
 }
 
 .hero-copy {
@@ -507,7 +496,6 @@ onMounted(loadDashboard)
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 13px var(--accent-glow);
 }
 
 .hero h1 {
@@ -545,22 +533,20 @@ onMounted(loadDashboard)
   gap: 7px;
   height: 34px;
   padding: 0 12px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid #cfe3d6;
   border-radius: 10px;
   color: var(--text-2);
-  background: rgba(255, 255, 255, 0.055);
+  background: #ffffff;
   font-size: 11.5px;
   font-weight: 570;
   cursor: pointer;
-  backdrop-filter: blur(10px);
   transition: 160ms var(--ease-out);
 }
 
 .quick-action:hover {
-  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
-  color: var(--text-1);
-  background: color-mix(in srgb, var(--accent) 10%, rgba(255, 255, 255, 0.04));
-  transform: translateY(-1px);
+  border-color: var(--accent-deep);
+  color: var(--accent-deep);
+  background: var(--accent-soft);
 }
 
 .hero-side {
@@ -582,15 +568,9 @@ onMounted(loadDashboard)
   align-items: center;
   width: 168px;
   padding: 14px 12px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #cfe3d6;
   border-radius: 30px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
-    rgba(8, 13, 20, 0.28);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
+  background: #ffffff;
 }
 
 .date-sculpture__weekday {
@@ -606,7 +586,6 @@ onMounted(loadDashboard)
   font-weight: 610;
   letter-spacing: -0.08em;
   line-height: 0.96;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
 .date-sculpture__month {
@@ -627,9 +606,9 @@ onMounted(loadDashboard)
   align-items: center;
   gap: 1px;
   padding: 7px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #cfe3d6;
   border-radius: 10px;
-  background: rgba(5, 9, 14, 0.24);
+  background: #f6fbf8;
 }
 
 .hero-mini-stats span {
@@ -698,13 +677,7 @@ onMounted(loadDashboard)
   bottom: 17px;
   left: 114px;
   width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.14) 6%,
-    rgba(255, 255, 255, 0.1) 94%,
-    transparent
-  );
+  background: var(--stroke);
 }
 
 .timeline-item {
@@ -718,7 +691,7 @@ onMounted(loadDashboard)
 }
 
 .timeline-item:hover {
-  background: rgba(255, 255, 255, 0.032);
+  background: var(--surface-2);
 }
 
 .timeline-time {
@@ -742,18 +715,17 @@ onMounted(loadDashboard)
   z-index: 1;
   width: 9px;
   height: 9px;
-  border: 2px solid var(--bg-1);
+  border: 2px solid var(--surface-1);
   border-radius: 50%;
   background: var(--tone, var(--accent));
-  box-shadow: 0 0 0 3px var(--tone-bg, var(--accent-soft));
 }
 
 .timeline-content {
   min-width: 0;
   padding: 4px 11px 5px;
-  border: 1px solid color-mix(in srgb, var(--tone-border, var(--stroke)) 62%, transparent);
+  border: 1px solid var(--tone-border, var(--stroke));
   border-radius: 11px;
-  background: linear-gradient(90deg, var(--tone-bg, var(--accent-faint)), transparent 76%);
+  background: var(--tone-bg, var(--accent-faint));
 }
 
 .timeline-heading {
@@ -828,17 +800,17 @@ onMounted(loadDashboard)
   flex: none;
   margin-top: 1px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--stroke-strong);
   border-radius: 6px;
   color: transparent;
-  background: transparent;
+  background: var(--surface-1);
   cursor: pointer;
   transition: 160ms var(--ease-out);
 }
 
 .focus-check:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-deep);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
@@ -874,7 +846,6 @@ onMounted(loadDashboard)
 
 .priority-dot--high {
   background: var(--danger);
-  box-shadow: 0 0 7px rgba(255, 112, 137, 0.48);
 }
 
 .priority-dot--medium {
@@ -918,7 +889,7 @@ onMounted(loadDashboard)
   padding: 9px 10px;
   border: 1px solid var(--stroke);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--surface-2);
 }
 
 .finance-split span:not(.finance-dot) {
@@ -976,8 +947,7 @@ onMounted(loadDashboard)
 }
 
 .mini-diary:hover {
-  border-color: var(--stroke-strong);
-  transform: translateY(-1px);
+  border-color: var(--accent-deep);
 }
 
 .mini-diary__icon {
@@ -987,7 +957,7 @@ onMounted(loadDashboard)
   flex: none;
   place-items: center;
   border-radius: 10px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 

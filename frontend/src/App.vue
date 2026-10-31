@@ -53,44 +53,34 @@ onBeforeUnmount(() => {
   height: 100%;
   overflow: hidden;
   isolation: isolate;
+  background: var(--bg-0);
 }
 
 .ambient {
   position: fixed;
   z-index: -2;
   border-radius: 50%;
-  filter: blur(80px);
   pointer-events: none;
-  opacity: 0.52;
 }
 
 .ambient--one {
-  top: -28vh;
-  right: 8vw;
-  width: 54vw;
-  height: 62vh;
-  background: radial-gradient(circle, rgba(40, 112, 255, 0.52), transparent 68%);
+  top: -190px;
+  right: -150px;
+  width: 430px;
+  height: 430px;
+  background: #e6f2e7;
 }
 
 .ambient--two {
-  bottom: -34vh;
-  left: -12vw;
-  width: 48vw;
-  height: 58vh;
-  background: radial-gradient(circle, rgba(16, 117, 169, 0.34), transparent 68%);
+  bottom: -200px;
+  left: -140px;
+  width: 360px;
+  height: 360px;
+  background: #f8eee7;
 }
 
 .ambient-grid {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.2;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 64% at 52% 22%, black 20%, transparent 78%);
-  pointer-events: none;
+  display: none;
 }
 
 .app-body {
@@ -109,25 +99,14 @@ onBeforeUnmount(() => {
   min-width: 0;
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--stroke);
   border-radius: var(--radius-xl);
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 42%),
-    rgba(9, 13, 20, 0.66);
-  box-shadow:
-    0 28px 80px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(22px) saturate(1.2);
+  background: var(--surface-1);
+  box-shadow: var(--shadow-sm);
 }
 
 .content-sheen {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    radial-gradient(900px 460px at 28% -12%, rgba(59, 135, 255, 0.12), transparent 58%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent 18%);
-  pointer-events: none;
+  display: none;
 }
 
 .content-shell :deep(.page) {

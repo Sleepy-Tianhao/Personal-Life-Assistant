@@ -1,12 +1,12 @@
 const TONES = [
-  { hue: 202, sat: 96, light: 66 },
-  { hue: 164, sat: 67, light: 60 },
-  { hue: 258, sat: 90, light: 76 },
-  { hue: 40, sat: 91, light: 67 },
-  { hue: 336, sat: 92, light: 73 },
-  { hue: 190, sat: 84, light: 58 },
-  { hue: 18, sat: 91, light: 67 },
-  { hue: 117, sat: 58, light: 62 },
+  { color: '#2f7d5f', border: '#c5e3d5', background: '#e7f4ed', strong: '#d9eee4' },
+  { color: '#3d7f9f', border: '#c7e0ec', background: '#e8f3f8', strong: '#dceef6' },
+  { color: '#79649f', border: '#ddd2ee', background: '#f1ecf8', strong: '#e9e1f5' },
+  { color: '#997028', border: '#ebdab5', background: '#faf2de', strong: '#f5e9cf' },
+  { color: '#a75467', border: '#f0cad2', background: '#fbe9ed', strong: '#f7dde3' },
+  { color: '#2c7e7c', border: '#c2e4e2', background: '#e5f4f3', strong: '#d8eeec' },
+  { color: '#a45f38', border: '#eed3c3', background: '#faeee7', strong: '#f5e3d8' },
+  { color: '#6e7c33', border: '#dce4c2', background: '#f1f4e5', strong: '#e9efd8' },
 ]
 
 export function hashString(value) {
@@ -20,11 +20,11 @@ export function hashString(value) {
 export function toneFor(value) {
   const tone = TONES[hashString(value) % TONES.length]
   return {
-    color: `hsl(${tone.hue} ${tone.sat}% ${tone.light}%)`,
-    border: `hsla(${tone.hue}, ${tone.sat}%, ${tone.light}%, 0.34)`,
-    background: `hsla(${tone.hue}, ${tone.sat}%, ${tone.light}%, 0.13)`,
-    backgroundStrong: `hsla(${tone.hue}, ${tone.sat}%, ${tone.light}%, 0.22)`,
-    glow: `hsla(${tone.hue}, ${tone.sat}%, ${tone.light}%, 0.2)`,
+    color: tone.color,
+    border: tone.border,
+    background: tone.background,
+    backgroundStrong: tone.strong,
+    glow: 'transparent',
   }
 }
 

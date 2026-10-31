@@ -204,7 +204,7 @@ function isActive(path) {
 
 .nav-item:hover {
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-3);
 }
 
 .nav-item:active {
@@ -212,12 +212,9 @@ function isActive(path) {
 }
 
 .nav-item--active {
-  border-color: color-mix(in srgb, var(--accent) 18%, transparent);
-  color: var(--text-1);
-  background:
-    linear-gradient(90deg, var(--accent-soft), transparent 90%),
-    rgba(255, 255, 255, 0.035);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border-color: var(--stroke-accent);
+  color: var(--accent-deep);
+  background: var(--accent-soft);
 }
 
 .nav-item__icon {
@@ -228,14 +225,13 @@ function isActive(path) {
   place-items: center;
   border-radius: 9px;
   color: var(--text-3);
-  background: rgba(255, 255, 255, 0.035);
+  background: var(--surface-2);
   transition: 160ms var(--ease-out);
 }
 
 .nav-item--active .nav-item__icon {
-  color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent-deep);
+  background: var(--surface-1);
 }
 
 .nav-item__copy {
@@ -271,7 +267,6 @@ function isActive(path) {
 
 .nav-item--active .nav-item__marker {
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .nav-footer {
@@ -295,7 +290,7 @@ function isActive(path) {
   padding: 10px 11px;
   border: 1px solid var(--stroke);
   border-radius: 12px;
-  background: rgba(4, 8, 13, 0.34);
+  background: var(--surface-2);
   transition:
     border-color 160ms var(--ease-out),
     background 160ms var(--ease-out);
@@ -303,7 +298,7 @@ function isActive(path) {
 
 .backend-card:hover {
   border-color: var(--stroke-strong);
-  background: rgba(255, 255, 255, 0.035);
+  background: var(--surface-3);
 }
 
 .backend-card__dot {
@@ -312,17 +307,14 @@ function isActive(path) {
   flex: none;
   border-radius: 50%;
   background: var(--warning);
-  box-shadow: 0 0 9px rgba(244, 201, 106, 0.4);
 }
 
 .backend-card__dot--online {
   background: var(--success);
-  box-shadow: 0 0 9px rgba(94, 226, 166, 0.45);
 }
 
 .backend-card__dot--offline {
   background: var(--danger);
-  box-shadow: 0 0 9px rgba(255, 112, 137, 0.4);
 }
 
 .backend-card__copy {

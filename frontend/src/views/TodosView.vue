@@ -483,10 +483,7 @@ onBeforeUnmount(() => {
 
 .task-item:hover {
   border-color: var(--stroke-strong);
-  background:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.045), transparent 50%),
-    var(--surface-1);
-  transform: translateY(-1px);
+  background: var(--surface-2);
 }
 
 .task-item--done {
@@ -500,24 +497,24 @@ onBeforeUnmount(() => {
   flex: none;
   margin-top: 2px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid var(--stroke-strong);
   border-radius: 8px;
   color: transparent;
-  background: transparent;
+  background: var(--surface-1);
   cursor: pointer;
   transition: 160ms var(--ease-out);
 }
 
 .task-check:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-deep);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
 .task-check--done {
-  border-color: var(--accent);
-  color: #03111b;
-  background: var(--accent);
+  border-color: var(--accent-strong);
+  color: #ffffff;
+  background: var(--accent-strong);
 }
 
 .task-body {
@@ -572,12 +569,12 @@ onBeforeUnmount(() => {
 }
 
 .status--pending {
-  color: var(--text-3);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-2);
+  background: var(--surface-3);
 }
 
 .status--progress {
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 

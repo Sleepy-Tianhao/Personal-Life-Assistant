@@ -2,7 +2,7 @@
 
 个人生活助手：把待办、日程、课表、账本和日记放进同一个本地桌面工作台。
 
-界面基于 Vue 3 + Electron，设计语言参考 [ClassIsland](https://github.com/ClassIsland/ClassIsland) 的 Fluent 深色桌面体验，并针对个人生活管理场景重新设计。后端使用 FastAPI + SQLite，数据只保存在本机。
+界面基于 Vue 3 + Electron，沿用 [ClassIsland](https://github.com/ClassIsland/ClassIsland) 的导航结构与悬浮信息岛概念，但采用浅色、扁平纯色和低饱和配色，整体风格清新轻盈。后端使用 FastAPI + SQLite，数据只保存在本机。
 
 ![今日看板](docs/screenshots/dashboard.png)
 
@@ -13,6 +13,7 @@
 - [x] 课表 HTML 导入、周次解析与看板 API
 - [x] Vue 3 前端：今日、待办、日程、课表、账本、日记、设置
 - [x] Electron 跨平台桌面壳与自定义窗口控制
+- [x] ClassIsland 风格桌面置顶浮窗，支持自定义板块与内容
 - [x] 前后端 API 联调与基础交互验证
 - [x] Electron 打包配置（Windows / macOS / Linux）
 - [ ] 将 Python 后端打包进桌面安装包
@@ -23,6 +24,20 @@
 | 今日工作台 | 课表看板 |
 | --- | --- |
 | ![今日](docs/screenshots/dashboard.png) | ![课表](docs/screenshots/timetable.png) |
+
+![桌面浮窗](docs/screenshots/floating-board.png)
+
+## 桌面浮窗
+
+在「设置 → 桌面浮窗」中开启后，会创建一个独立于主窗口的透明置顶浮窗，支持：
+
+- 拖动到桌面任意位置，并可锁定位置；
+- 显示/隐藏、双击打开主界面；
+- 添加 1–8 个板块并自由排序；
+- 板块内容可选时钟、日期、当前课程、今日课程、待办事项、下一日程、本月支出、日记状态和自定义文字；
+- 配置和窗口位置自动保存，下次启动继续显示。
+
+浮窗使用 Electron 标准的透明窗口、置顶窗口和无边框拖拽能力，适配 Linux 和 Windows。当前已在 Linux 环境实际验证，Windows 使用相同的跨平台 Electron API 实现。
 
 ## 快速开始
 

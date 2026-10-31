@@ -82,8 +82,7 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   padding: 36px;
-  background: rgba(2, 5, 9, 0.66);
-  backdrop-filter: blur(12px) saturate(0.9);
+  background: rgba(32, 52, 42, 0.28);
 }
 
 .modal-panel {
@@ -92,14 +91,10 @@ onBeforeUnmount(() => {
   max-height: min(840px, calc(100vh - 72px));
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--stroke);
   border-radius: 22px;
-  background:
-    linear-gradient(155deg, rgba(255, 255, 255, 0.055), transparent 36%),
-    rgba(15, 21, 31, 0.96);
-  box-shadow:
-    0 40px 120px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  background: var(--surface-1);
+  box-shadow: var(--shadow-lg);
 }
 
 .modal-header {
@@ -141,7 +136,7 @@ onBeforeUnmount(() => {
   gap: 10px;
   padding: 15px 22px 18px;
   border-top: 1px solid var(--stroke);
-  background: rgba(6, 10, 15, 0.28);
+  background: var(--surface-2);
 }
 
 .modal-enter-active,

@@ -30,35 +30,24 @@ defineProps({
   overflow: hidden;
 }
 
-.metric-card::after {
-  position: absolute;
-  right: -30px;
-  bottom: -48px;
-  width: 114px;
-  height: 114px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--metric-glow, var(--accent-soft)), transparent 70%);
-  content: "";
-  pointer-events: none;
-}
-
 .metric-card--income {
   --metric-color: var(--income);
-  --metric-glow: rgba(94, 226, 166, 0.13);
+  --metric-bg: var(--success-soft);
 }
 
 .metric-card--expense {
   --metric-color: var(--expense);
-  --metric-glow: rgba(255, 130, 152, 0.13);
+  --metric-bg: var(--danger-soft);
 }
 
 .metric-card--warning {
   --metric-color: var(--warning);
-  --metric-glow: rgba(244, 201, 106, 0.12);
+  --metric-bg: var(--warning-soft);
 }
 
 .metric-card--accent {
-  --metric-color: var(--accent);
+  --metric-color: var(--accent-deep);
+  --metric-bg: var(--accent-soft);
 }
 
 .metric-top {
@@ -81,10 +70,10 @@ defineProps({
   width: 30px;
   height: 30px;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--metric-color, var(--accent)) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--metric-color, var(--accent)) 14%, white);
   border-radius: 9px;
   color: var(--metric-color, var(--accent));
-  background: color-mix(in srgb, var(--metric-color, var(--accent)) 9%, transparent);
+  background: var(--metric-bg, var(--accent-soft));
 }
 
 .metric-value {

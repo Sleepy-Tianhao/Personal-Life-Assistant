@@ -618,7 +618,7 @@ onBeforeUnmount(() => {
   padding: 2px;
   border: 1px solid var(--stroke);
   border-radius: 11px;
-  background: rgba(4, 8, 13, 0.3);
+  background: var(--surface-2);
 }
 
 .week-label {
@@ -634,7 +634,7 @@ onBeforeUnmount(() => {
 
 .week-label:hover {
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-3);
 }
 
 .calendar-card {
@@ -685,14 +685,14 @@ onBeforeUnmount(() => {
   border-right: 1px solid var(--stroke);
   border-bottom: 1px solid var(--stroke);
   color: var(--text-3);
-  background: rgba(255, 255, 255, 0.014);
+  background: var(--surface-2);
   text-align: left;
   cursor: pointer;
   transition: background 150ms var(--ease-out);
 }
 
 .week-day:hover {
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-3);
 }
 
 .week-day__name {
@@ -732,7 +732,7 @@ onBeforeUnmount(() => {
   place-items: center;
   border-radius: 6px;
   color: var(--text-3);
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface-1);
   opacity: 0;
   transition: opacity 150ms ease;
 }
@@ -742,14 +742,12 @@ onBeforeUnmount(() => {
 }
 
 .week-day--today {
-  background:
-    linear-gradient(180deg, var(--accent-soft), transparent 68%),
-    rgba(255, 255, 255, 0.02);
+  background: var(--accent-faint);
 }
 
 .week-day--today .week-day__name,
 .week-day--today .week-day__number {
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .all-day-row {
@@ -823,14 +821,14 @@ onBeforeUnmount(() => {
 }
 
 .day-column--today {
-  background: color-mix(in srgb, var(--accent) 3%, transparent);
+  background: var(--accent-faint);
 }
 
 .hour-line {
   position: absolute;
   right: 0;
   left: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.052);
+  border-top: 1px solid var(--stroke);
   pointer-events: none;
 }
 
@@ -841,7 +839,6 @@ onBeforeUnmount(() => {
   z-index: 3;
   height: 1px;
   background: var(--accent);
-  box-shadow: 0 0 7px var(--accent-glow);
   pointer-events: none;
 }
 
@@ -853,7 +850,6 @@ onBeforeUnmount(() => {
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .event-block {
@@ -869,20 +865,15 @@ onBeforeUnmount(() => {
   border-left: 2px solid var(--tone);
   border-radius: 7px;
   color: var(--text-1);
-  background:
-    linear-gradient(135deg, var(--tone-bg-strong), var(--tone-bg)),
-    rgba(12, 18, 27, 0.9);
+  background: var(--tone-bg);
   text-align: left;
   cursor: pointer;
-  transition:
-    filter 150ms var(--ease-out),
-    transform 150ms var(--ease-out);
+  transition: background 150ms var(--ease-out);
 }
 
 .event-block:hover {
   z-index: 4;
-  filter: brightness(1.16);
-  transform: translateY(-1px);
+  background: var(--tone-bg-strong);
 }
 
 .event-block--clipped-top {
@@ -934,7 +925,7 @@ onBeforeUnmount(() => {
 .column-loading {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.015), transparent);
+  background: var(--accent-faint);
   animation: pulse-soft 1.4s infinite;
 }
 

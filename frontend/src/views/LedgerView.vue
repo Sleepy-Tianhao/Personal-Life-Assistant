@@ -557,7 +557,7 @@ onMounted(loadLedger)
   padding: 2px;
   border: 1px solid var(--stroke);
   border-radius: 11px;
-  background: rgba(4, 8, 13, 0.3);
+  background: var(--surface-2);
 }
 
 .month-label {
@@ -573,7 +573,7 @@ onMounted(loadLedger)
 
 .month-label:hover {
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-3);
 }
 
 .metrics-grid {
@@ -650,7 +650,7 @@ onMounted(loadLedger)
 }
 
 .transaction-item:hover {
-  background: rgba(255, 255, 255, 0.032);
+  background: var(--surface-2);
 }
 
 .transaction-item:last-child {
@@ -762,7 +762,6 @@ onMounted(loadLedger)
   height: 7px;
   border-radius: 50%;
   background: var(--tone);
-  box-shadow: 0 0 8px var(--tone-glow);
 }
 
 .category-amount {
@@ -774,15 +773,14 @@ onMounted(loadLedger)
   height: 4px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.055);
+  background: var(--surface-3);
 }
 
 .category-bar__fill {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--tone), color-mix(in srgb, var(--tone) 48%, transparent));
-  box-shadow: 0 0 10px var(--tone-glow);
+  background: var(--tone);
   transition: width 450ms var(--ease-out);
 }
 
@@ -805,10 +803,8 @@ onMounted(loadLedger)
   align-items: flex-start;
   gap: 12px;
   padding: 18px 20px;
-  border-color: color-mix(in srgb, var(--accent) 14%, var(--stroke));
-  background:
-    radial-gradient(300px 120px at 100% 0%, var(--accent-soft), transparent 70%),
-    var(--surface-1);
+  border-color: var(--stroke-accent);
+  background: var(--accent-faint);
 }
 
 .ledger-note__icon {
@@ -818,7 +814,7 @@ onMounted(loadLedger)
   flex: none;
   place-items: center;
   border-radius: 10px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
@@ -857,7 +853,7 @@ onMounted(loadLedger)
   padding: 4px;
   border: 1px solid var(--stroke);
   border-radius: 13px;
-  background: rgba(4, 8, 13, 0.35);
+  background: var(--surface-2);
 }
 
 .type-option {
@@ -881,15 +877,15 @@ onMounted(loadLedger)
 }
 
 .type-option--expense.active {
-  border-color: rgba(255, 130, 152, 0.22);
+  border-color: color-mix(in srgb, var(--expense) 20%, white);
   color: var(--expense);
-  background: rgba(255, 130, 152, 0.1);
+  background: var(--danger-soft);
 }
 
 .type-option--income.active {
-  border-color: rgba(94, 226, 166, 0.22);
+  border-color: color-mix(in srgb, var(--income) 20%, white);
   color: var(--income);
-  background: rgba(94, 226, 166, 0.1);
+  background: var(--success-soft);
 }
 
 .amount-input-wrap {
@@ -900,12 +896,12 @@ onMounted(loadLedger)
   padding: 0 14px;
   border: 1px solid var(--stroke-strong);
   border-radius: 13px;
-  background: rgba(5, 9, 14, 0.5);
+  background: var(--surface-1);
   transition: 160ms var(--ease-out);
 }
 
 .amount-input-wrap:focus-within {
-  border-color: var(--accent);
+  border-color: var(--accent-deep);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
@@ -930,7 +926,8 @@ onMounted(loadLedger)
 }
 
 .amount-input::placeholder {
-  color: rgba(255, 255, 255, 0.16);
+  color: var(--text-3);
+  opacity: 0.55;
 }
 
 .form-grid {

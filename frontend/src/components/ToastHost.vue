@@ -54,13 +54,12 @@ const icons = {
   align-items: flex-start;
   gap: 10px;
   padding: 11px 11px 11px 13px;
-  border: 1px solid var(--stroke-strong);
+  border: 1px solid var(--stroke);
   border-radius: 13px;
   color: var(--text-1);
-  background: rgba(18, 24, 34, 0.96);
+  background: var(--surface-1);
   box-shadow: var(--shadow-md);
   pointer-events: auto;
-  backdrop-filter: blur(20px);
 }
 
 .toast-icon {
@@ -70,7 +69,7 @@ const icons = {
   flex: none;
   place-items: center;
   border-radius: 8px;
-  color: var(--accent);
+  color: var(--accent-deep);
   background: var(--accent-soft);
 }
 
@@ -112,7 +111,7 @@ const icons = {
 
 .toast-close:hover {
   color: var(--text-1);
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--surface-3);
 }
 
 .toast-enter-active,
