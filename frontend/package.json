@@ -1,0 +1,67 @@
+{
+  "name": "personal-life-assistant-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Cross-platform personal life assistant desktop app",
+  "author": "Sleepy-Tianhao",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:desktop": "concurrently -k -s first \"vite --host 127.0.0.1\" \"wait-on tcp:127.0.0.1:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .\"",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "desktop": "electron .",
+    "test:ui": "node tests/ui-smoke.mjs",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "tech.personal.lifeassistant",
+    "productName": "Life Assistant",
+    "icon": "build/icon.png",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "asar": true,
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    }
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.66.0",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.10",
+    "concurrently": "^10.0.6",
+    "cross-env": "^10.1.0",
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0",
+    "playwright": "^1.64.1",
+    "vite": "^8.3.5",
+    "wait-on": "^9.5.1"
+  }
+}

@@ -1,0 +1,3 @@
+"""Personal Life Assistant backend."""
+
+__version__ = "0.2.0"

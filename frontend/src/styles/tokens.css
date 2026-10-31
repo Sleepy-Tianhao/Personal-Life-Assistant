@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark;
+
+  --bg-0: #06090e;
+  --bg-1: #0a0f17;
+  --bg-2: #0e1520;
+
+  --surface-1: rgba(19, 25, 35, 0.72);
+  --surface-2: rgba(26, 34, 47, 0.68);
+  --surface-3: rgba(36, 46, 62, 0.66);
+  --surface-solid: #151c27;
+  --surface-deep: rgba(7, 11, 17, 0.84);
+
+  --stroke: rgba(255, 255, 255, 0.075);
+  --stroke-strong: rgba(255, 255, 255, 0.14);
+  --stroke-accent: color-mix(in srgb, var(--accent) 38%, transparent);
+
+  --text-1: #f5f8fd;
+  --text-2: #a7b3c6;
+  --text-3: #6f7d92;
+
+  --accent: #59c2ff;
+  --accent-strong: #2e9dff;
+  --accent-deep: #186dd3;
+  --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+  --accent-faint: color-mix(in srgb, var(--accent) 7%, transparent);
+  --accent-glow: color-mix(in srgb, var(--accent) 32%, transparent);
+
+  --success: #5ee2a6;
+  --success-soft: rgba(94, 226, 166, 0.12);
+  --danger: #ff7089;
+  --danger-soft: rgba(255, 112, 137, 0.12);
+  --warning: #f4c96a;
+  --warning-soft: rgba(244, 201, 106, 0.12);
+  --income: #5ee2a6;
+  --expense: #ff8298;
+
+  --radius-xs: 7px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", "Noto Sans SC", "Microsoft YaHei UI",
+    "PingFang SC", system-ui, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", "Noto Sans SC", "Microsoft YaHei UI",
+    "PingFang SC", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "SFMono-Regular", "JetBrains Mono", monospace;
+
+  --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 20px 54px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.38);
+  --shadow-accent: 0 14px 40px color-mix(in srgb, var(--accent) 18%, transparent);
+
+  --ease-out: cubic-bezier(0.22, 0.8, 0.3, 1);
+  --ease-spring: cubic-bezier(0.16, 1.1, 0.3, 1);
+  --titlebar-height: 52px;
+  --sidebar-width: 232px;
+}
+
+html[data-accent="teal"] {
+  --accent: #58e0c3;
+  --accent-strong: #20bea2;
+  --accent-deep: #118873;
+}
+
+html[data-accent="violet"] {
+  --accent: #b7a4ff;
+  --accent-strong: #8e74ff;
+  --accent-deep: #654bd8;
+}
+
+html[data-accent="rose"] {
+  --accent: #ff9ac0;
+  --accent-strong: #f06a9e;
+  --accent-deep: #c53f76;
+}
+
+html[data-accent="amber"] {
+  --accent: #f4c96a;
+  --accent-strong: #e1a936;
+  --accent-deep: #b67b12;
+}
